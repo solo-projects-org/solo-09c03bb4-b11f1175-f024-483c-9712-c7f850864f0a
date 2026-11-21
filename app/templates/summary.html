@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/">菜价月报底表归档复核</a>
+  <span class="subtitle">同月汇总 · 局部更新 · 与全量复算一致</span>
+</header>
+<main>
+  <p><a href="/">← 返回发布版列表</a> · <a href="/release/{{ release.version|urlquote }}">返回版本 {{ release.version }}</a></p>
+
+  <section class="panel">
+    <h1>版本 <code>{{ release.version }}</code> · {{ release.label }} · 同月汇总核对</h1>
+    {% if not resolution.ok %}
+      <p class="status bad">✗ 目标版未通过核对，只报原因，不出汇总</p>
+      <p class="reason">{{ resolution.reason }}</p>
+    {% else %}
+      <p class="status ok">✓ 目标版已核对通过</p>
+      <form class="filter" method="get" action="/release/{{ release.version|urlquote }}/summary">
+        <label for="month">报价月</label>
+        <select id="month" name="month">
+          {% for option in month_options %}
+          <option value="{{ option }}" {% if month == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit">查看汇总</button>
+      </form>
+      {% if summary_error %}
+      <p class="reason">{{ summary_error }}</p>
+      {% elif summary %}
+      <p class="muted">
+        报价月 <strong>{{ summary.month }}</strong>；
+        汇总方式：<strong>{{ mode_label }}</strong>{% if summary.base_version and summary.base_version != release.version %}（自版本 <code>{{ summary.base_version }}</code> 的已核对汇总更新）{% endif %}；
+        本次为汇总检查了 <strong>{{ summary.checked_quotation_count }}</strong> 个不同单号；
+        进程内最多缓存 {{ cache_capacity }} 份汇总（当前缓存 {{ cache_capacity }} 份上限，按 LRU 淘汰）。
+      </p>
+      <p class="muted small">
+        本页各市场条数、合计、均价、最低价、最高价与对目标版全量复算的结果一致；
+        价格以整数分参与运算，均价四舍五入保留四位小数元。
+      </p>
+
+      <h2>各市场报价汇总（{{ summary.month }}）</h2>
+      <table class="data">
+        <thead><tr><th>市场</th><th class="num">条数</th><th class="num">合计（元）</th><th class="num">均价（元）</th><th class="num">最低价（元）</th><th class="num">最高价（元）</th></tr></thead>
+        <tbody>
+        {% for group in summary.groups %}
+          <tr>
+            <td>{{ group.label }}</td>
+            <td class="num">{{ group.count }}</td>
+            <td class="num">{{ group.total_fen|fen }}</td>
+            <td class="num"><strong>{{ group.average_yuan }}</strong></td>
+            <td class="num">{{ group.min_fen|fen }}</td>
+            <td class="num">{{ group.max_fen|fen }}</td>
+          </tr>
+        {% else %}
+          <tr><td colspan="6" class="muted">该报价月没有任何报价单。</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% if not summary.groups %}
+      <p class="muted">该报价月没有报价单：各市场条数为 0，无合计、均价与极值。</p>
+      {% endif %}
+      {% endif %}
+    {% endif %}
+  </section>
+
+  {% if resolution.attempts %}
+  <section class="panel">
+    <h2>候选链尝试记录</h2>
+    <ol class="attempts">
+      {% for attempt in resolution.attempts %}
+      <li class="{{ 'ok' if attempt.ok else 'bad' }}">
+        <span class="tag {{ 'ok' if attempt.ok else 'bad' }}">{{ "通过" if attempt.ok else "失败" }}</span>
+        <span>链：{% for version in attempt.planned_versions %}<code>{{ version }}</code>{% if not loop.last %} → {% endif %}{% endfor %}</span>
+        {% if not attempt.ok %}<div class="reason">{{ attempt.reason }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="muted small">失败尝试中的任何变更都不会写入汇总缓存，也不会影响本页结果。</p>
+  </section>
+  {% endif %}
+</main>
+<footer class="site-footer">价格以分计；均价按整数分计算，四舍五入保留四位小数元。</footer>
+</body>
+</html>

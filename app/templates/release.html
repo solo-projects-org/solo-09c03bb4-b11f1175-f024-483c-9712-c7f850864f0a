@@ -34,6 +34,26 @@
     {% endif %}
   </section>
 
+  {% if resolution.ok %}
+  <section class="panel">
+    <h2>同月汇总快捷核对</h2>
+    <p class="muted">
+      校对同月的不同发布版时，没变的报价可沿用上次统计。选择报价月后查看各市场的
+      报价条数、合计、均价、最低价和最高价；若链上已有同月且底表摘要相符的汇总，
+      只检查余下更正包涉及的报价单来更新汇总，结果与全量复算一致。
+    </p>
+    <form class="filter" method="get" action="/release/{{ release.version|urlquote }}/summary">
+      <label for="summary-month">报价月</label>
+      <select id="summary-month" name="month">
+        {% for option in month_options %}
+        <option value="{{ option }}" {% if month == option %}selected{% endif %}>{{ option }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">查看同月汇总</button>
+    </form>
+  </section>
+  {% endif %}
+
   <section class="panel">
     <h2>实际用到的包</h2>
     {% if resolution.chain %}

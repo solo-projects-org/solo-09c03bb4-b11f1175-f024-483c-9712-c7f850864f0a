@@ -24,20 +24,39 @@ from .pricing import (
     month_bounds,
     parse_quotes,
 )
+from .summary import (
+    MODE_CACHE_HIT,
+    MODE_FULL,
+    MODE_INCREMENTAL,
+    SummaryCache,
+    SummaryError,
+    SummaryService,
+)
 
 TEMPLATES = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
+
+SUMMARY_MODE_LABELS = {
+    MODE_FULL: "全量复算",
+    MODE_INCREMENTAL: "沿用已核对汇总，局部更新",
+    MODE_CACHE_HIT: "缓存命中，本次未复查任何单号",
+}
 
 
 @dataclass
 class AppState:
     settings: Settings
     archive: Archive
+    summary_service: SummaryService
 
 
 def create_app(settings: Settings | None = None, archive: Archive | None = None) -> FastAPI:
     settings = settings or Settings.from_env()
     archive = archive or Archive(settings.archive_dir, settings.manifest_name)
-    state = AppState(settings=settings, archive=archive)
+    # Process-wide cache: at most four monthly summaries are retained.
+    summary_service = SummaryService(archive, SummaryCache())
+    state = AppState(
+        settings=settings, archive=archive, summary_service=summary_service
+    )
 
     app = FastAPI(title="菜价月报底表归档复核", docs_url=None, redoc_url=None)
     app.state.price_archive = state
@@ -128,6 +147,66 @@ def create_app(settings: Settings | None = None, archive: Archive | None = None)
                 context["download_sha256"] = resolution.chain[-1].sha256 if resolution.chain else None
         status = 200 if resolution.ok else 422
         return TEMPLATES.TemplateResponse(request, "release.html", context, status_code=status)
+
+    @app.get("/release/{version}/summary", response_class=HTMLResponse)
+    def release_summary(request: Request, version: str, month: str | None = None) -> Response:
+        try:
+            manifest = state.archive.load_manifest()
+        except ManifestError as exc:
+            return TEMPLATES.TemplateResponse(
+                request,
+                "error.html",
+                {"title": "归档清单不可用", "message": str(exc), "archive": state.archive},
+                status_code=503,
+            )
+        release_meta = next((r for r in manifest.releases if r.version == version), None)
+        if release_meta is None:
+            raise HTTPException(status_code=404, detail=f"发布版 {version} 不在归档清单中")
+        if not month or not month.strip():
+            raise HTTPException(status_code=400, detail="月份参数 month 必填，格式 YYYY-MM")
+        try:
+            month_bounds(month)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
+        month = month.strip()
+
+        resolution = state.archive.resolve(version)
+        base_context: dict[str, Any] = {
+            "title": f"{manifest.name} · {release_meta.label} · 同月汇总核对",
+            "manifest": manifest,
+            "archive": state.archive,
+            "release": release_meta,
+            "resolution": resolution,
+            "month": month,
+            "month_options": [],
+            "summary": None,
+            "mode_label": "",
+            "cache_capacity": state.summary_service.cache.capacity,
+        }
+        if not resolution.ok or resolution.document is None:
+            # 目标版核对失败时只报原因，不出汇总、不写缓存。
+            base_context["mode_label"] = ""
+            return TEMPLATES.TemplateResponse(
+                request, "summary.html", base_context, status_code=422
+            )
+        try:
+            summary = state.summary_service.summarize(
+                manifest,
+                version,
+                month,
+                resolution.document,
+                resolution.chain,
+            )
+        except SummaryError as exc:
+            base_context["resolution"] = resolution
+            base_context["summary_error"] = str(exc)
+            return TEMPLATES.TemplateResponse(
+                request, "summary.html", base_context, status_code=422
+            )
+        base_context["month_options"] = summary.month_options
+        base_context["summary"] = summary
+        base_context["mode_label"] = SUMMARY_MODE_LABELS.get(summary.mode, summary.mode)
+        return TEMPLATES.TemplateResponse(request, "summary.html", base_context)
 
     @app.get("/release/{version}/download")
     def download(version: str) -> Response:

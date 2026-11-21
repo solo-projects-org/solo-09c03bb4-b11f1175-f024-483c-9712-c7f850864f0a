@@ -97,31 +97,38 @@ def _as_fen(value: Any, label: str) -> int:
     raise TableError(f"{label} 必须是整数分，实际为 {value!r}")
 
 
+def parse_quote(quotation_no: Any, entry: Any) -> Quote:
+    """Interpret one table entry with the same rules as :func:`parse_quotes`.
+
+    The incremental summary updater uses this so that a single corrected slip
+    is interpreted exactly the way a full recomputation would interpret it.
+    """
+
+    if not isinstance(entry, dict):
+        raise TableError(f"报价单 {quotation_no} 的内容必须是对象")
+    quotation_no = str(quotation_no)
+    market = _as_text(_pick(entry, FIELD_MARKET), f"报价单 {quotation_no} 的 market")
+    product = _as_text(
+        _pick(entry, FIELD_PRODUCT), f"报价单 {quotation_no} 的 product"
+    )
+    quoted_on = _as_date(_pick(entry, FIELD_DATE), f"报价单 {quotation_no} 的 date")
+    price = _as_fen(_pick(entry, FIELD_PRICE), f"报价单 {quotation_no} 的 price")
+    unit_value = _pick(entry, FIELD_UNIT)
+    unit = unit_value.strip() if isinstance(unit_value, str) and unit_value.strip() else None
+    return Quote(
+        quotation_no=quotation_no,
+        market=market,
+        product=product,
+        quoted_on=quoted_on,
+        price_fen=price,
+        unit=unit,
+    )
+
+
 def parse_quotes(document: Any) -> list[Quote]:
     if not isinstance(document, dict):
         raise TableError("底表必须是按报价单号索引的 JSON 对象")
-    quotes: list[Quote] = []
-    for quotation_no, entry in document.items():
-        if not isinstance(entry, dict):
-            raise TableError(f"报价单 {quotation_no} 的内容必须是对象")
-        market = _as_text(_pick(entry, FIELD_MARKET), f"报价单 {quotation_no} 的 market")
-        product = _as_text(
-            _pick(entry, FIELD_PRODUCT), f"报价单 {quotation_no} 的 product"
-        )
-        quoted_on = _as_date(_pick(entry, FIELD_DATE), f"报价单 {quotation_no} 的 date")
-        price = _as_fen(_pick(entry, FIELD_PRICE), f"报价单 {quotation_no} 的 price")
-        unit_value = _pick(entry, FIELD_UNIT)
-        unit = unit_value.strip() if isinstance(unit_value, str) and unit_value.strip() else None
-        quotes.append(
-            Quote(
-                quotation_no=str(quotation_no),
-                market=market,
-                product=product,
-                quoted_on=quoted_on,
-                price_fen=price,
-                unit=unit,
-            )
-        )
+    quotes = [parse_quote(quotation_no, entry) for quotation_no, entry in document.items()]
     quotes.sort(key=lambda q: (q.quoted_on, q.market, q.product, q.quotation_no))
     return quotes
 
