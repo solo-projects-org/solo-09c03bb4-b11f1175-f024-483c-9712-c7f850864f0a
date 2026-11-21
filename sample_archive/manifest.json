@@ -1,0 +1,111 @@
+{
+  "name": "菜价月报底表归档（本地样例）",
+  "generated_by": "tools/build_sample_archive.py",
+  "note": "版本名使用发布月份；底表为累计报价台账；价格单位为分。",
+  "digests": {
+    "2026-06": "09e3ea9a1ad10a5eaa7543a618fa9ce36effdb4574a64de197f674644b33ed7d",
+    "2026-07": "4c4824c5dc96d054b307dea783019bd4220c79ef17aa9a1e3fee8500a0310ea8",
+    "2026-08": "918b9ad8a9ef9c840f58f7798597dd0c3f029e98b903bf3adae1e1b89e7895e9",
+    "2026-09": "f032153a9685d2b8a4173d971d76aeb7ddb8696161a3ee4ec08ef6068fd368ec",
+    "2026-10": "52b39d45f7ca66b8bcdbf407546d757732e2fda22550d1c6c97b2b4505bc8b9c"
+  },
+  "base_tables": [
+    {
+      "version": "2026-06",
+      "path": "tables/table-2026-06.json",
+      "bytes": 11187
+    },
+    {
+      "version": "2026-09",
+      "path": "tables/table-2026-09.json",
+      "bytes": 44739
+    }
+  ],
+  "patches": [
+    {
+      "id": "patch-06-to-07",
+      "path": "patches/patch-06-to-07.json",
+      "bytes": 15221,
+      "from": "2026-06",
+      "to": "2026-07"
+    },
+    {
+      "id": "patch-06-to-07-bulk",
+      "path": "patches/patch-06-to-07-bulk.json",
+      "bytes": 33471,
+      "from": "2026-06",
+      "to": "2026-07"
+    },
+    {
+      "id": "patch-07-to-08",
+      "path": "patches/patch-07-to-08.json",
+      "bytes": 14967,
+      "from": "2026-07",
+      "to": "2026-08"
+    },
+    {
+      "id": "patch-08-to-09",
+      "path": "patches/patch-08-to-09.json",
+      "bytes": 14967,
+      "from": "2026-08",
+      "to": "2026-09"
+    },
+    {
+      "id": "patch-09-to-10",
+      "path": "patches/patch-09-to-10.json",
+      "bytes": 15224,
+      "from": "2026-09",
+      "to": "2026-10"
+    },
+    {
+      "id": "patch-06-to-08",
+      "path": "patches/patch-06-to-08.json",
+      "bytes": 30185,
+      "from": "2026-06",
+      "to": "2026-08"
+    },
+    {
+      "id": "patch-06-to-09",
+      "path": "patches/patch-06-to-09.json",
+      "bytes": 45149,
+      "from": "2026-06",
+      "to": "2026-09"
+    },
+    {
+      "id": "patch-06-to-10",
+      "path": "patches/patch-06-to-10.json",
+      "bytes": 60113,
+      "from": "2026-06",
+      "to": "2026-10"
+    },
+    {
+      "id": "patch-07-to-10",
+      "path": "patches/patch-07-to-10.json",
+      "bytes": 44895,
+      "from": "2026-07",
+      "to": "2026-10"
+    }
+  ],
+  "releases": [
+    {
+      "version": "2026-06",
+      "label": "2026 年 6 月月报"
+    },
+    {
+      "version": "2026-07",
+      "label": "2026 年 7 月月报"
+    },
+    {
+      "version": "2026-08",
+      "label": "2026 年 8 月月报"
+    },
+    {
+      "version": "2026-09",
+      "label": "2026 年 9 月月报"
+    },
+    {
+      "version": "2026-10",
+      "label": "2026 年 10 月月报"
+    }
+  ]
+}

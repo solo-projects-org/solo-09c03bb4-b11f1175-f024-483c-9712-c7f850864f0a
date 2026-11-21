@@ -1,0 +1,22 @@
+services:
+  price-archive:
+    build: .
+    image: price-archive-review:local
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      # Mount point inside the container.  Change it here and in `volumes`.
+      ARCHIVE_DIR: /archive
+      ARCHIVE_MANIFEST: manifest.json
+      MAX_DETAIL_ROWS: "5000"
+    volumes:
+      # The local sample archive.  Replace the left-hand side with the real,
+      # read-only archive directory to review live data:
+      #   ARCHIVE_PATH=/srv/price-archive docker compose up --build
+      - "${ARCHIVE_PATH:-./sample_archive}:/archive:ro"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

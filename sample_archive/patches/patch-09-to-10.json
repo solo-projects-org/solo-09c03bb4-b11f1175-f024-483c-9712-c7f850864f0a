@@ -1,0 +1,734 @@
+[
+  {
+    "op": "replace",
+    "path": "/BJ20260917-205",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "猪五花肉",
+      "date": "2026-09-17",
+      "price_fen": 670,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-101",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "大白菜",
+      "date": "2026-10-03",
+      "price_fen": 311,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-102",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "土豆",
+      "date": "2026-10-03",
+      "price_fen": 364,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-103",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "西红柿",
+      "date": "2026-10-03",
+      "price_fen": 417,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-104",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "黄瓜",
+      "date": "2026-10-03",
+      "price_fen": 470,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-105",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "猪五花肉",
+      "date": "2026-10-03",
+      "price_fen": 523,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-201",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "大白菜",
+      "date": "2026-10-03",
+      "price_fen": 348,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-202",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "土豆",
+      "date": "2026-10-03",
+      "price_fen": 401,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-203",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "西红柿",
+      "date": "2026-10-03",
+      "price_fen": 454,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-204",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "黄瓜",
+      "date": "2026-10-03",
+      "price_fen": 507,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-205",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "猪五花肉",
+      "date": "2026-10-03",
+      "price_fen": 560,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-301",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "大白菜",
+      "date": "2026-10-03",
+      "price_fen": 385,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-302",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "土豆",
+      "date": "2026-10-03",
+      "price_fen": 438,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-303",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "西红柿",
+      "date": "2026-10-03",
+      "price_fen": 491,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-304",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "黄瓜",
+      "date": "2026-10-03",
+      "price_fen": 544,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261003-305",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "猪五花肉",
+      "date": "2026-10-03",
+      "price_fen": 597,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-101",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "大白菜",
+      "date": "2026-10-10",
+      "price_fen": 360,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-102",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "土豆",
+      "date": "2026-10-10",
+      "price_fen": 413,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-103",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "西红柿",
+      "date": "2026-10-10",
+      "price_fen": 466,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-104",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "黄瓜",
+      "date": "2026-10-10",
+      "price_fen": 519,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-105",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "猪五花肉",
+      "date": "2026-10-10",
+      "price_fen": 572,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-201",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "大白菜",
+      "date": "2026-10-10",
+      "price_fen": 397,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-202",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "土豆",
+      "date": "2026-10-10",
+      "price_fen": 450,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-203",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "西红柿",
+      "date": "2026-10-10",
+      "price_fen": 503,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-204",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "黄瓜",
+      "date": "2026-10-10",
+      "price_fen": 556,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-205",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "猪五花肉",
+      "date": "2026-10-10",
+      "price_fen": 609,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-301",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "大白菜",
+      "date": "2026-10-10",
+      "price_fen": 434,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-302",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "土豆",
+      "date": "2026-10-10",
+      "price_fen": 487,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-303",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "西红柿",
+      "date": "2026-10-10",
+      "price_fen": 540,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-304",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "黄瓜",
+      "date": "2026-10-10",
+      "price_fen": 593,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261010-305",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "猪五花肉",
+      "date": "2026-10-10",
+      "price_fen": 646,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-101",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "大白菜",
+      "date": "2026-10-17",
+      "price_fen": 409,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-102",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "土豆",
+      "date": "2026-10-17",
+      "price_fen": 462,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-103",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "西红柿",
+      "date": "2026-10-17",
+      "price_fen": 515,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-104",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "黄瓜",
+      "date": "2026-10-17",
+      "price_fen": 568,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-105",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "猪五花肉",
+      "date": "2026-10-17",
+      "price_fen": 621,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-201",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "大白菜",
+      "date": "2026-10-17",
+      "price_fen": 446,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-202",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "土豆",
+      "date": "2026-10-17",
+      "price_fen": 499,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-203",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "西红柿",
+      "date": "2026-10-17",
+      "price_fen": 552,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-204",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "黄瓜",
+      "date": "2026-10-17",
+      "price_fen": 605,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-205",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "猪五花肉",
+      "date": "2026-10-17",
+      "price_fen": 658,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-301",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "大白菜",
+      "date": "2026-10-17",
+      "price_fen": 483,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-302",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "土豆",
+      "date": "2026-10-17",
+      "price_fen": 536,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-303",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "西红柿",
+      "date": "2026-10-17",
+      "price_fen": 589,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-304",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "黄瓜",
+      "date": "2026-10-17",
+      "price_fen": 642,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261017-305",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "猪五花肉",
+      "date": "2026-10-17",
+      "price_fen": 695,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-101",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "大白菜",
+      "date": "2026-10-24",
+      "price_fen": 458,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-102",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "土豆",
+      "date": "2026-10-24",
+      "price_fen": 511,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-103",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "西红柿",
+      "date": "2026-10-24",
+      "price_fen": 564,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-104",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "黄瓜",
+      "date": "2026-10-24",
+      "price_fen": 617,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-105",
+    "value": {
+      "market": "朝阳门菜市场",
+      "product": "猪五花肉",
+      "date": "2026-10-24",
+      "price_fen": 670,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-201",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "大白菜",
+      "date": "2026-10-24",
+      "price_fen": 495,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-202",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "土豆",
+      "date": "2026-10-24",
+      "price_fen": 548,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-203",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "西红柿",
+      "date": "2026-10-24",
+      "price_fen": 601,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-204",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "黄瓜",
+      "date": "2026-10-24",
+      "price_fen": 654,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-205",
+    "value": {
+      "market": "海淀批发市场",
+      "product": "猪五花肉",
+      "date": "2026-10-24",
+      "price_fen": 707,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-301",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "大白菜",
+      "date": "2026-10-24",
+      "price_fen": 532,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-302",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "土豆",
+      "date": "2026-10-24",
+      "price_fen": 585,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-303",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "西红柿",
+      "date": "2026-10-24",
+      "price_fen": 638,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-304",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "黄瓜",
+      "date": "2026-10-24",
+      "price_fen": 691,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/BJ20261024-305",
+    "value": {
+      "market": "丰台农贸市场",
+      "product": "猪五花肉",
+      "date": "2026-10-24",
+      "price_fen": 744,
+      "unit": "元/500克",
+      "currency": "CNY"
+    }
+  }
+]
